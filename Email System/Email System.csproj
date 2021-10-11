@@ -1,0 +1,417 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26AEDB35-50EF-4558-A002-FF0878F6A3A4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Email_System</RootNamespace>
+    <AssemblyName>Email System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44389</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.2.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.2.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.24.3.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.24.3\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2e6337a5d77bfbc, processorArchitecture=MSIL">
+      <HintPath>..\packages\starkbank-ecdsa.1.3.1\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Login.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="Error\404.aspx" />
+    <Content Include="Error\Oops.aspx" />
+    <Content Include="Inbox.aspx" />
+    <Content Include="profile.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="compose.aspx" />
+    <Content Include="Mail\About.aspx" />
+    <Content Include="DescriptionOfMail.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Masters\Main.Master" />
+    <Content Include="libman.json" />
+    <Content Include="SentMail.aspx" />
+    <Content Include="Starred.aspx" />
+    <Content Include="Static\Css\afterLogin.css" />
+    <Content Include="Static\Css\compose.css" />
+    <Content Include="Static\Css\descriptionCss.css" />
+    <Content Include="Static\Css\home-page.css" />
+    <Content Include="Static\Css\login.css" />
+    <Content Include="Static\Css\profile.css" />
+    <Content Include="Static\Css\register.css" />
+    <Content Include="Static\Css\style.css" />
+    <Content Include="Error\404.html" />
+    <Content Include="Static\Images\Gmail-Logo.png" />
+    <Content Include="Static\Images\gmail.ico" />
+    <Content Include="Static\Images\login_user.png" />
+    <Content Include="Static\Images\mail.jpeg" />
+    <Content Include="Static\Images\register_user.png" />
+    <Content Include="Static\Js\afterLogin.js" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Static\lib\jquery-te\jquery-te.css" />
+    <Content Include="Static\lib\jquery-te\jquery-te.js" />
+    <Content Include="Static\lib\jquery-te\jquery-te.min.css" />
+    <Content Include="Static\lib\jquery-te\jquery-te.min.js" />
+    <Content Include="Static\lib\jquery-te\jquery-te.png" />
+    <Content Include="Static\lib\jquery\jquery.js" />
+    <Content Include="Static\lib\jquery\jquery.min.js" />
+    <Content Include="Static\lib\jquery\jquery.slim.js" />
+    <Content Include="Static\lib\jquery\jquery.slim.min.js" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\default.Master.cs">
+      <DependentUpon>default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\default.Master.designer.cs">
+      <DependentUpon>default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Inbox.aspx.cs">
+      <DependentUpon>Inbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inbox.aspx.designer.cs">
+      <DependentUpon>Inbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110050658551_InitialCreate.cs" />
+    <Compile Include="Migrations\202110050658551_InitialCreate.designer.cs">
+      <DependentUpon>202110050658551_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110060542152_addReplyMailTable.cs" />
+    <Compile Include="Migrations\202110060542152_addReplyMailTable.designer.cs">
+      <DependentUpon>202110060542152_addReplyMailTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110061221238_addStarredColumnInMailTable.cs" />
+    <Compile Include="Migrations\202110061221238_addStarredColumnInMailTable.designer.cs">
+      <DependentUpon>202110061221238_addStarredColumnInMailTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110100535069_changeInUser.cs" />
+    <Compile Include="Migrations\202110100535069_changeInUser.designer.cs">
+      <DependentUpon>202110100535069_changeInUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ReplyMail.cs" />
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_start\RouteConfig.cs" />
+    <Compile Include="App_start\UserConfig.cs" />
+    <Compile Include="compose.aspx.cs">
+      <DependentUpon>compose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="compose.aspx.designer.cs">
+      <DependentUpon>compose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mail\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mail\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DescriptionOfMail.aspx.cs">
+      <DependentUpon>DescriptionOfMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DescriptionOfMail.aspx.designer.cs">
+      <DependentUpon>DescriptionOfMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppDbContext.cs" />
+    <Compile Include="Models\Mail.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SentMail.aspx.cs">
+      <DependentUpon>SentMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SentMail.aspx.designer.cs">
+      <DependentUpon>SentMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_start\Startup.Auth.cs" />
+    <Compile Include="Starred.aspx.cs">
+      <DependentUpon>Starred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Starred.aspx.designer.cs">
+      <DependentUpon>Starred.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Masters\default.Master" />
+    <None Include="packages.config" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Static\lib\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Static\lib\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Static\lib\jquery\jquery.min.map" />
+    <Content Include="Static\lib\jquery\jquery.slim.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Static\Html\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202110050658551_InitialCreate.resx">
+      <DependentUpon>202110050658551_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110060542152_addReplyMailTable.resx">
+      <DependentUpon>202110060542152_addReplyMailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110061221238_addStarredColumnInMailTable.resx">
+      <DependentUpon>202110061221238_addStarredColumnInMailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110100535069_changeInUser.resx">
+      <DependentUpon>202110100535069_changeInUser.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53881</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44389/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
