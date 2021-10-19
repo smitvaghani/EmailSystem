@@ -6,7 +6,7 @@
     <title>
         Email: Free, Private & Secure Email
     </title>
-    <link rel="icon" href="../Static/Images/gmail.ico"/>
+    <link rel="icon" href="../Static/Images/logo.ico"/>
     <link rel="stylesheet" href="../Static/lib/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="../Static/Css/home-page.css" />
 </head>
@@ -16,7 +16,7 @@
     <section>
         <nav class="navbar navbar-expand-lg nav-custom custom-shadow">
             <div class="container-fluid">
-                <img src="../Static/Images/Gmail-Logo.png" class="logo-img" alt="logo">
+                <img src="../Static/Images/logo.jpg" class="logo-img" alt="logo">
               <a class="navbar-brand" href="#">Email System</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fas fa-bars fa-lg"></i></span>

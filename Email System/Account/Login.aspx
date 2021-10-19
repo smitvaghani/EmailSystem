@@ -24,7 +24,7 @@
                     CssClass="text-danger" ErrorMessage="The email field is required.<br>" />
                 <asp:RegularExpressionValidator runat="server" ControlToValidate="Email"
                     CssClass="text-danger" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
-                    Display="Dynamic" ErrorMessage="Invalid email address." />
+                    Display="Dynamic" ErrorMessage="Invalid email address.<br>" />
 
                 <asp:Label runat="server"><b>Password</b></asp:Label><br />
                 <asp:TextBox runat="server" placeholder="Enter Password" ID="Password" TextMode="Password" />

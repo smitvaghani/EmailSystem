@@ -46,6 +46,10 @@ input[type=text], textarea {
     margin-left: 0px !important;
 }
 
+.textEditor{
+    resize:none;
+}
+
 .jqte {
     margin-top: 3px !important;
 }

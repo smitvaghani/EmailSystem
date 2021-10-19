@@ -136,7 +136,6 @@
     <Content Include="Static\Css\register.css" />
     <Content Include="Static\Css\style.css" />
     <Content Include="Error\404.html" />
-    <Content Include="Static\Images\Gmail-Logo.png" />
     <Content Include="Static\Images\gmail.ico" />
     <Content Include="Static\Images\login_user.png" />
     <Content Include="Static\Images\mail.jpeg" />

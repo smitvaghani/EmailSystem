@@ -8,7 +8,7 @@
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
-    <link rel="icon" href="../Static/Images/gmail.ico" />
+    <link rel="icon" href="../Static/Images/logo.ico" />
     <!-- External CSS -->
     <link rel="stylesheet" href="../Static/Css/afterLogin.css">
     <link rel="stylesheet" href="../Static/Css/style.css" />

@@ -46,10 +46,10 @@ namespace Email_System.Account
                 Mail WelcomeMail = new Mail
                 {
                     Id = Guid.NewGuid().ToString(),
-                    SenderUserModelId = "428a1d21-8427-4979-bfc4-24c70f777045",
+                    SenderUserModelId = "f81f8d1a-3655-4ed8-ab08-417665e3a690",
                     ReceiverUserModelId = loggedUser.Id,
-                    Subject = "Finish setting up your new Google account",
-                    Description = "Hi, " + loggedUser.FirstName + "<br/>Welcome to Google",
+                    Subject = "Finish setting up your new account",
+                    Description = "Hi, " + loggedUser.FirstName + "<br/>Welcome to Email System.<br><br><br><a href='/profile'>Update Your Profile</a>",
                     Date = DateTime.Now,
                     MarkAsRead = false,
                     starred = false
