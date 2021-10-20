@@ -46,7 +46,7 @@ namespace Email_System.Account
                 Mail WelcomeMail = new Mail
                 {
                     Id = Guid.NewGuid().ToString(),
-                    SenderUserModelId = "f81f8d1a-3655-4ed8-ab08-417665e3a690",
+                    SenderUserModelId = "adminId",
                     ReceiverUserModelId = loggedUser.Id,
                     Subject = "Finish setting up your new account",
                     Description = "Hi, " + loggedUser.FirstName + "<br/>Welcome to Email System.<br><br><br><a href='/profile'>Update Your Profile</a>",

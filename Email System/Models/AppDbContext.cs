@@ -11,7 +11,7 @@ namespace Email_System.Models
     {
         public AppDbContext():base("EmailSystemDbCon",throwIfV1Schema: false)
         {
-
+            Database.SetInitializer(new UserInitializer());
         }
         public static AppDbContext Create()
         {
